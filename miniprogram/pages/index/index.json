@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "tab":"/components/tab/tab",
+    "tab1":"/pages/tabs/tab1/tab1"
+  }
+}

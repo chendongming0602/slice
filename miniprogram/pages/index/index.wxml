@@ -1,0 +1,16 @@
+<view hidden="{{tabCount!==0}}">
+  <view wx:if="{{tabIf[0]}}" >
+    <tab1></tab1>
+  </view>
+</view>
+<view hidden="{{tabCount!==1}}">
+  <view wx:if="{{tabIf[1]}}" >
+    2
+  </view>
+</view>
+<view hidden="{{tabCount!==2}}">
+  <view wx:if="{{tabIf[2]}}" >
+    3
+  </view>
+</view>
+<tab tabCount="{{tabCount}}" bind:tabIdex="tabIdex"></tab>
