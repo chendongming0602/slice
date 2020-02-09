@@ -13,19 +13,19 @@ Component({
   data: {
     list:[
       {
-        name:"最新",
-        url:"https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/tab/new.png",
-        urlNo:"https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/tab/newNo.png"
+        name:"推荐",
+        url:"https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/tab/t1.png",
+        urlNo:"https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/tab/t0.png"
       },
       {
-        name:"最热",
-        url:"https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/tab/fire.png",
-        urlNo:"https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/tab/fireNo.png"
+        name:"广场",
+        url:"https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/tab/g1.png",
+        urlNo:"https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/tab/g0.png"
       },
       {
-        name:"最热",
-        url:"https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/tab/fire.png",
-        urlNo:"https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/text/tab/fireNo.png"
+        name:"我的",
+        url:"https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/tab/w1.png",
+        urlNo:"https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/tab/w0.png"
       }
     ],
     count:1

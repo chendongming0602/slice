@@ -13,4 +13,5 @@
     3
   </view>
 </view>
+<view class="empty"></view>
 <tab tabCount="{{tabCount}}" bind:tabIdex="tabIdex"></tab>

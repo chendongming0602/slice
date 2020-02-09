@@ -11,7 +11,33 @@
   </view>
 
   <view slot="main">
-    123
+    <view class="times">
+      将于<text>144：1:221</text>后刷新
+      <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E6%8E%A8%E8%8D%90/refresh.png"></image>
+    </view>
+    <view class="listBox">
+      <view class="list" wx:for="{{5}}" wx:key="{{index}}">
+        <view >
+          <image class="pic" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E6%8E%A8%E8%8D%90/refresh.png"></image>
+          <view class="name">我是哈哈哈哈</view>
+        </view>
+
+        <view class="item">
+          <view class="left">
+            <view>向别：<text>难的立刻</text></view>
+            <view>向别：<text>难的立刻</text></view>
+            <view>向别：<text>难的立刻</text></view>
+            <view>向别：<text>难的发立刻</text></view>
+          </view>
+          <view class="right">
+            <view>向别：<text>难的的立刻</text></view>
+            <view>向别：<text>难的发立刻</text></view>
+            <view>向别：<text>难的发立刻</text></view>
+            <view>向别：<text>难的立刻</text></view>
+          </view>
+        </view>
+      </view>
+    </view>
   </view>
 
 </scroll-Box>
