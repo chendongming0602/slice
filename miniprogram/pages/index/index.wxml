@@ -5,7 +5,7 @@
 </view>
 <view hidden="{{tabCount!==1}}">
   <view wx:if="{{tabIf[1]}}" >
-    2
+    <tab2></tab2>
   </view>
 </view>
 <view hidden="{{tabCount!==2}}">

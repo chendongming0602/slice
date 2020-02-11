@@ -52,3 +52,9 @@ view,image,navigator{
 text{
   color: #333;
 }
+Page{
+  --borB:#f0f;
+  --empty:#F9F9F9;
+  --borL:#FF5959;
+  --colorW:#BFBFBF;
+}

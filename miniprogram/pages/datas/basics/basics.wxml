@@ -1,0 +1,107 @@
+<view class="box">
+<image class="top" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/top.png"></image>
+<view class="empty"></view>
+
+<view class="title">
+  <view>基础资料</view>
+</view>
+
+<view class="listBox">
+  <view class="item">
+    <view class="itemLeft">昵称<text>*</text></view>
+    <view class="itemRight">系统自动生成</view>
+  </view>
+  <view class="item">
+    <view class="itemLeft">性别<text>*</text></view>
+    <view class="itemRight">
+      <picker range="{{sex}}" bindchange="changeSex">
+        <view class="pic">
+          {{sexValue?sexValue:'未设置'}}
+          <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="itemLeft">出生<text>*</text></view>
+    <view class="itemRight">
+      <picker mode="date"  start="1920-01-01" end="{{timeEnd}}" bindchange="changeTime">
+        <view class="pic">
+          {{birthValue?birthValue:'未设置'}}
+          <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="itemLeft">户籍<text>*</text></view>
+    <view class="itemRight">
+      <picker range="{{province}}"  bindchange="changeCensus">
+        <view class="pic">
+          {{census?census:'未设置'}}
+          <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="itemLeft">居住地<text>*</text></view>
+    <view class="itemRight">
+      <picker value="{{place}}" bindcolumnchange="changePlaceC"  mode="multiSelector" bindchange="changePlace"  range="{{[province, city, area]}}">
+        <view class="pic">
+          {{placeValue?placeValue:'未设置'}}
+          <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="itemLeft">学历<text>*</text></view>
+    <view class="itemRight">
+      <picker range="{{education}}" bindchange="changeEduc">
+        <view class="pic">
+          {{educValue?educValue:'未设置'}}
+          <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="itemLeft">身高<text>*</text></view>
+    <view class="itemRight">
+      <picker range="{{stature}}" bindchange="changeStature">
+        <view class="pic ">
+          {{statureValue?statureValue:'未设置'}}
+          <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="itemLeft">职业<text>*</text></view>
+    <view class="itemRight">
+      <picker range="{{occupation}}" bindchange="changeOccup">
+        <view class="pic">
+        {{occupValue?occupValue:'未设置'}}
+          <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="item">
+    <view class="itemLeft">联系方式<text>*</text></view>
+    <input bindinput="changephone" placeholder-class="inputP" class="phone" maxlength="15"  placeholder="手机/微信"></input>
+  </view>
+</view>
+<view class="button">
+ <view>暂不填写</view>
+ <view class="next">下一步</view>
+</view>
+</view>

@@ -1,0 +1,41 @@
+@import "/style/scroll.wxss";
+.swiper{
+  width: 100%;
+  height: 288rpx;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+.swiper image{
+  width: 100%;
+  height: 100%;
+}
+.listBot{
+  padding: 40rpx;
+}
+.listTitles{
+  display: flex;
+  align-items: center;
+}
+.listTitles view{
+  font-size: 36rpx;
+  color: #BFBFBF;
+  position: relative;
+} 
+.listTitle1{
+  margin-left: 40rpx;
+}
+.listTitles .active{
+  font-size: 42rpx;
+  color: #424242;
+  font-weight: bold;
+}
+.move{
+  width:50rpx;
+  height:8rpx;
+  background:rgba(255,89,89,1);
+  border-radius:4rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -25rpx;
+  bottom: -10rpx;
+}

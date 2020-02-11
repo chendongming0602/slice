@@ -1,0 +1,29 @@
+<scroll-Box
+  class="scroll-box"
+  bind:pulldown="onPullDown"
+  bind:reachbottom="onReachBottom"
+>
+  <view class="pulldown-loadng" slot="pulldown-loading-ele">
+    <view class="loading-icon-text">
+      <!-- <image class="loadingImg"  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/jmx_skin/components/emotion/love2.png"></image> -->
+      正在刷新...
+    </view>
+  </view>
+  <view slot="main">
+    <swiper class="swiper">
+      <swiper-item wx:for="{{3}}" wx:key="{{index}}">
+        <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/jmx_skin/components/emotion/userPic.png"></image>
+      </swiper-item>
+    </swiper>
+    <view class="listBot">
+      <view class="listTitles">
+        <view catchtap="listTitle"  wx:for="{{listTitle}}" wx:key="{{index}}" class="listTitle listTitle{{index}} {{item.is?'active':''}}" data-index="{{index}}">
+          {{item.name}}
+          <view class="move" wx:if="{{item.is}}"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+</scroll-Box>
