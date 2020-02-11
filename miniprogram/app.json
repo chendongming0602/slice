@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/tabs/tab2/tab2",
-    "pages/datas/basics/basics"
+    "pages/datas/basics/basics",
+    "pages/datas/mate/mate"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

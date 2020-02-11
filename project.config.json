@@ -43,6 +43,13 @@
 					"pathName": "pages/datas/basics/basics",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "择偶",
+					"pathName": "pages/datas/mate/mate",
+					"query": "",
+					"scene": null
 				}
 			]
 		}
