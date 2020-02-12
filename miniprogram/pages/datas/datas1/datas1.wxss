@@ -60,7 +60,7 @@ view{
 .self,.kith{
   width:100%;
   line-height:86rpx;
-  background:rgb(177, 116, 116);
+  background:#EDEDED;
   border-radius:6rpx;
   text-align: center;
   padding: 0 20rpx;
@@ -74,6 +74,7 @@ view{
   width: 32rpx;
   height: 32rpx;
   margin-left: 5rpx;
+  transition: .5s;
 }
 .itemBox{
   display: flex;
@@ -86,3 +87,11 @@ view{
   width: 33.333%;
   margin-top: 40rpx;
 }
+.chid{
+  transform: rotate(180deg);
+}
+.active{
+  background: #FF5959;
+  color: #fff;
+}
+.kithItemBox{padding-bottom: 126rpx;}

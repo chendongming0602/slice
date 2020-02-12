@@ -6,26 +6,42 @@
     <view>相亲者</view>
   </view>
   <view class="itemBox">
-    <view class="itemBox2" wx:for="{{3}}">
-      <view class="self">本人</view>
+    <view class="itemBox2" wx:for="{{3}}" hidden="{{index!==0}}" catchtap="selfE">
+      <view class="self {{isCount===1?'active':''}}" >本人</view>
     </view>
   </view>
 
   <view class="itemBox">
-    <view class="kithBox" wx:for="{{3}}">
-      <view class="kith">
+    <view class="kithBox" wx:for="{{3}}" hidden="{{index!==0}}">
+      <view class="kith" catchtap="childrenE">
       子女
-        <image  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/datas1/up.png"></image>
+        <image class="{{isCss.children?'chid':''}}"  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/datas1/up.png"></image>
       </view>
     </view>
   </view>
  
 
-  <view class="itemBox">
-    <view class="itemBox2" wx:for="{{5}}">
-      <view class="self">本人</view>
+  <view class="itemBox" hidden="{{isCss.isChildren}}">
+    <view class="itemBox2" wx:for="{{childrenList}}" catchtap="chidsE" data-value="{{item}}" data-index="{{index}}">
+      <view class="self {{chidsIndex===index?'active':''}}">{{item}}</view>
     </view>
   </view>
+
+  <view class="itemBox">
+    <view class="kithBox" wx:for="{{3}}" hidden="{{index!==0}}" catchtap="kithE">
+      <view class="kith">
+        亲友
+        <image class="{{isCss.kith?'chid':''}}"  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/datas1/up.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="itemBox kithItemBox" hidden="{{isCss.isKith}}">
+    <view class="itemBox2" wx:for="{{kithList}}" catchtap="kithItemE" data-value="{{item}}" data-index="{{index}}">
+      <view class="self {{kithIndex===index?'active':''}}">{{item}}</view>
+    </view>
+  </view>
+
   <view class="button">
     <view>暂不填写</view>
     <view class="next">完成</view>
