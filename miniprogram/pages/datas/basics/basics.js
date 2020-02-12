@@ -1,6 +1,6 @@
 // miniprogram/pages/datas/basics/basics.js
 import datas from "../../../utils/datas.js";
-console.log(datas)
+// console.log(datas)
 Page({
 
   /**

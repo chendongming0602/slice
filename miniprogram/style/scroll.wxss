@@ -44,7 +44,7 @@
   animation: loadingImg .5s linear infinite;
 }
 /********************************************************/
-view,image,navigator{
+view,image,navigator,textarea{
   box-sizing: border-box;
   display: block;
   color: #333;

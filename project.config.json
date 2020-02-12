@@ -50,6 +50,19 @@
 					"pathName": "pages/datas/mate/mate",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "补充资料",
+					"pathName": "pages/datas/replenish/replenish",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "资料1（选泽对象）",
+					"pathName": "pages/datas/datas1/datas1",
+					"scene": null
 				}
 			]
 		}

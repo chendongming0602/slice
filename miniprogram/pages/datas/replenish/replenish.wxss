@@ -27,7 +27,7 @@ view{
   font-weight: bold;
 }
 .listBox{
-  padding:0 40rpx 163rpx;
+  padding:0 40rpx 0;
 }
 .item{
   padding: 30rpx 0;
@@ -87,4 +87,71 @@ view{
 }
 .inputP{
   color: #333;
+}
+.explain{
+  border: none;
+}
+.textareaP{
+  color: #424242;
+}
+.textarea{
+  background: #F7F7F7;
+  width: 100%;
+  height: 268rpx;
+  border-radius: 8rpx;
+  padding: 10rpx;
+}
+.textBox{
+  border-bottom: 1rpx solid var(--borB);
+  padding-bottom: 30rpx;
+}
+.albumBox{
+  margin-top: 30rpx;
+}
+.albumTitle{
+  padding: 0 40rpx;
+}
+.album{
+  display: flex;
+  align-items: center;
+  padding: 30rpx 32.5rpx 192rpx;
+  flex-wrap: wrap;
+}
+.albumItem{
+  width: 33.33333%;
+  height: 220rpx;
+  padding: 7.5rpx;
+}
+.albumItem2{
+  background: #F7F7F7;
+  width: 100%;
+  height: 100%;
+  border-radius: 5rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add{
+  width: 96rpx;
+  height: 96rpx;
+}
+.urlAlbum{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.urlAlbum image{
+  width: 100%;
+  height: 100%;
+}
+.urlAlbum view{
+  width: 100%;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  background: rgba(1,1,1,0.5);
+  font-weight: bold;
 }

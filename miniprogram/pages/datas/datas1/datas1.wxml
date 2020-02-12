@@ -1,0 +1,33 @@
+<view class="box">
+  <image class="top" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/top.png"></image>
+  <view class="empty"></view>
+
+  <view class="title">
+    <view>相亲者</view>
+  </view>
+  <view class="itemBox">
+    <view class="itemBox2" wx:for="{{3}}">
+      <view class="self">本人</view>
+    </view>
+  </view>
+
+  <view class="itemBox">
+    <view class="kithBox" wx:for="{{3}}">
+      <view class="kith">
+      子女
+        <image  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/datas1/up.png"></image>
+      </view>
+    </view>
+  </view>
+ 
+
+  <view class="itemBox">
+    <view class="itemBox2" wx:for="{{5}}">
+      <view class="self">本人</view>
+    </view>
+  </view>
+  <view class="button">
+    <view>暂不填写</view>
+    <view class="next">完成</view>
+  </view>
+</view>

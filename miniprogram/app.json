@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/tabs/tab2/tab2",
     "pages/datas/basics/basics",
-    "pages/datas/mate/mate"
+    "pages/datas/mate/mate",
+    "pages/datas/replenish/replenish",
+    "pages/datas/datas1/datas1"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

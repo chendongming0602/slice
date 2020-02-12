@@ -1,0 +1,78 @@
+<view class="box">
+  <image class="top" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/top.png"></image>
+  <view class="empty"></view>
+
+  <view class="title">
+    <view>资料补充</view>
+  </view>
+
+  <view class="listBox">
+
+
+    <view class="item">
+      <view class="itemLeft">收入要求(月)<text>*</text></view>
+      <view class="itemRight">
+        <picker range="{{income}}" bindchange="changeStature">
+          <view class="pic ">
+            {{incomeValue?incomeValue:'未设置'}}
+            <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="item">
+      <view class="itemLeft">婚姻状况<text>*</text></view>
+      <view class="itemRight">
+        <picker range="{{condition}}" bindchange="changeOccup">
+          <view class="pic">
+          {{conditionValue?conditionValue:'未设置'}}
+            <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="item">
+      <view class="itemLeft">是否有婚房<text>*</text></view>
+      <view class="itemRight">
+        <picker range="{{house}}" bindchange="changeEduc">
+          <view class="pic">
+            {{houseValue?houseValue:'未设置'}}
+            <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+
+
+    <view class="item explain">
+      <view class="itemLeft">更多择偶要求说明<text>*</text></view>
+    </view>
+    <view class="textBox">
+      <textarea bindinput="textareaEvent" placeholder="请填写" placeholder-class="textareaP" class="textarea"></textarea>
+    </view>
+  </view>
+
+  <view class="albumBox">
+    <view class="albumTitle">照片（第一张图片将默认认为头像） 上传真实照片，匹配率更高</view>
+    <view class="album">
+      <view class="albumItem" wx:for="{{albums}}" wx:key="{{index}}">
+        <view class="albumItem2">
+          <image wx:if="{{!item}}" class="add" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/replenish/add.png"></image>
+
+          <view wx:else class="urlAlbum">
+            <image mode="scaleToFill" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/top.png"></image>
+            <view>替 换</view>
+          </view>
+        </view>
+        
+      </view>
+    </view>
+  </view>
+  <view class="button">
+    <view>暂不填写</view>
+    <view class="next">完成</view>
+  </view>
+</view>

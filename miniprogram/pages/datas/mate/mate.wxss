@@ -1,6 +1,7 @@
 @import "/style/scroll.wxss";
 .box{
   position: relative;
+  min-height: 100vh;
 }
 view{
   font-size: 36rpx;
