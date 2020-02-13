@@ -23,6 +23,11 @@
         </view>
       </view>
     </view>
+
+    <!-- tab空位 -->
+    <view slot="empty">
+      <view class="empty"></view>
+    </view>
   </view>
 
 

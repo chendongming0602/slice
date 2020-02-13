@@ -21,22 +21,14 @@
           <image class="pic" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E6%8E%A8%E8%8D%90/refresh.png"></image>
           <view class="name">我是哈哈哈哈</view>
         </view>
-
-        <view class="item">
-          <view class="left">
-            <view>向别：<text>难的立刻</text></view>
-            <view>向别：<text>难的立刻</text></view>
-            <view>向别：<text>难的立刻</text></view>
-            <view>向别：<text>难的发立刻</text></view>
-          </view>
-          <view class="right">
-            <view>向别：<text>难的的立刻</text></view>
-            <view>向别：<text>难的发立刻</text></view>
-            <view>向别：<text>难的发立刻</text></view>
-            <view>向别：<text>难的立刻</text></view>
-          </view>
-        </view>
+          
+        <lists></lists>
       </view>
+    </view>
+
+    <!-- tab空位 -->
+    <view slot="empty">
+      <view class="empty"></view>
     </view>
   </view>
 

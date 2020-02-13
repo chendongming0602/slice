@@ -1,0 +1,60 @@
+<view class="nameBox" style="background:url('http://minis-resources-1252149780.cosgz.myqcloud.com/lovers_magpie%20/logo.jpg') no-repeat center/cover">
+  <view class="picBox" style="background:url('http://minis-resources-1252149780.cosgz.myqcloud.com/lovers_magpie%20/logo.jpg') no-repeat center/cover"></view>
+  <view class="name">的首付款</view>
+</view>
+
+<view class="praiseBox">
+  <view class="praise">
+    <view class="pra pra1">
+      <view class="count1">1990</view>
+      <view >点赞数</view>
+    </view>
+    <view class="pra">
+      <view class="count2">1990</view>
+      <view>点赞数</view>
+    </view>
+  </view>
+</view>
+
+<view class="datasBox">
+  <view class="datas">
+    基本资料
+    <view class="rightIcon">
+      修改
+      <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
+    </view>
+  </view>
+</view>
+
+<view class="lists">
+  <lists></lists>
+</view>
+
+<view class="datasBox">
+  <view class="datas">
+    联系方式
+    <view class="rightIcon">
+      修改
+      <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
+    </view>
+  </view>
+</view>
+<view class="phoneBox">
+  <view class="phone">
+    <view class="phoneL">
+      <view class="phoneText wei">手机/微信：</view>
+      <view wx:if="{{false}}" class="phoneCount">15656614166</view>
+      <view wx:else class="phoneCount2" style="background:url('https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E6%88%91%E7%9A%84/%E8%8E%B7%E5%8F%96%E6%89%8B%E6%9C%BA%E5%8F%B7.png') no-repeat center/cover">
+        点击获取
+      </view>
+    </view>
+    <!-- <view class="phoneR">复制</view> -->
+  </view>
+
+  <view class="relation">
+    <view class="rela wei">
+      与本人的关系<text>本人</text>
+    </view>
+    <view class="phoneR relaR">修改</view>
+  </view>
+</view>

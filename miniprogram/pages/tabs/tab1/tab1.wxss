@@ -42,25 +42,3 @@
   color: #FF5959;
   font-weight: bold;
 }
-.item{
-  display: flex;
-  justify-content: space-between;
-  font-size: 36rpx;
-}
-.left,.right{
-  width: 50%;
- 
-}
-.left view,.right view{
-  margin-top: 45rpx;
-  color: #BFBFBF;
-  display: flex;
-  align-items: center;
-}
-.left text,.right text{
-  display: inline-block;
-  max-width: 175rpx;
-  white-space:nowrap;
-  text-overflow:ellipsis;
-  overflow: hidden;
-}

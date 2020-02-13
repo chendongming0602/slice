@@ -1,0 +1,136 @@
+@import "/style/scroll.wxss";
+page{
+  background: #999;
+}
+.wei{
+  font-weight: bold;
+}
+.nameBox{
+  width: 100%;
+  height: 410rpx;
+  padding-top: 46rpx;
+}
+.picBox{
+  width: 220rpx;
+  height: 220rpx;
+  border: 4rpx solid #fff;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.name{
+  text-align: center;
+  margin-top: 38rpx;
+  font-size: 48rpx;
+  color: #fff;
+  font-weight: bold;
+}
+.praiseBox{
+  padding: 37rpx 0;
+  background: #fff;
+  margin-top: 20rpx;
+}
+.praise{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.pra{
+  width: 50%;
+}
+.pra1{
+  border-right: 1rpx solid #BFBFBF;
+}
+.pra view{
+  color: #BFBFBF;
+}
+.pra .count1{
+  font-size: 48rpx;
+  color: #F5B303;
+}
+.pra .count2{
+  font-size: 48rpx;
+  color: #F40101;
+}
+.count1,.count2{
+  margin-bottom: 10rpx;
+  font-weight: bold;
+}
+.datasBox{
+  margin-top: 20rpx;
+  background: #fff;
+  padding: 40rpx;
+  border-bottom: 1rpx solid var(--borB);
+}
+.datas{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #424242;
+  font-size: 40rpx;
+  border-left: 10rpx solid var(--borL);
+  padding-left: 20rpx;
+  font-weight: bold;
+}
+.rightIcon{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 36rpx;
+  font-weight: normal;
+}
+.rightIcon image{
+  width: 31rpx;
+  height: 31rpx;
+  margin-left: 10rpx;
+}
+.lists{
+  padding: 0 40rpx 40rpx;
+  background: #fff;
+}
+.phoneBox{
+  padding: 40rpx 170rpx 40rpx 40rpx;
+  background: #fff;
+}
+.phone{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.phoneL{
+  display: flex;
+  align-items: center;
+}
+
+.phoneCount,.phoneR{
+  color: #4B83E9;
+  /* font-weight: bold; */
+  text-decoration: underline;
+}
+.phoneCount2{
+  width: 326rpx;
+  line-height: 70rpx;
+  color: #FF5959;
+  font-size: 40rpx;
+  text-align: center;
+}
+.phoneR{
+  color: #FF5959;
+  font-size: 42rpx;
+}
+.relation{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40rpx;
+}
+.rela{
+  color: #BFBFBF;
+}
+.rela text{
+  margin-left: 28rpx;
+}
+.relaR{
+  color: #4B83E9;
+}

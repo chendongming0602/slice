@@ -1,0 +1,79 @@
+<scroll-Box
+  class="scroll-box"
+  bind:pulldown="onPullDown"
+  bind:reachbottom="onReachBottom"
+>
+  <view class="pulldown-loadng" slot="pulldown-loading-ele">
+    <view class="loading-icon-text">
+      <!-- <image class="loadingImg"  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/jmx_skin/components/emotion/love2.png"></image> -->
+      正在刷新...
+    </view>
+  </view>
+  <view slot="main">
+    <view class="picBox">
+      <view class="pic"></view>
+      <view class="name">我是啊发逗号啊</view>
+      <navigator class="changeData">
+        <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E6%88%91%E7%9A%84/changeData.png"></image>
+        修改
+      </navigator>
+    </view>
+
+    <view class="detailsBox">
+      <view class="share">
+        <button>  
+          <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E6%88%91%E7%9A%84/%E8%BD%AC%E5%8F%91.png"></image>
+          转发资料
+        </button>
+      </view>
+
+      <view class="popularity" style="background:url('https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E6%88%91%E7%9A%84/%E4%BA%BA%E6%B0%94%E8%83%8C%E6%99%AF.png') no-repeat center/cover">
+        <view class="pop">
+          <view class="popLeft">
+            <view class="popC">200</view>
+            <view class="popP">人气</view>
+          </view>
+          <view class="popRight">
+            <view class="popC">200</view>
+            <view class="popP">人气</view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 访问量 -->
+      <view class="datasBox">
+        <view class="datas" wx:for="{{4}}" wx:key="{{index}}">
+          <view class="dataName">
+            访问量
+            <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E6%88%91%E7%9A%84/%E9%97%AE%E5%8F%B7.png"></image>
+          </view>
+          <view class="counts">1222</view>
+          <view class="ratio">
+            <view class="day">日</view>
+            <image class="ratioImg" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E6%88%91%E7%9A%84/%E4%B8%8A%E5%8D%87.png"></image>
+            <view class="ratioCount">100%</view>
+          </view>
+
+          <view class="ratio">
+            <view class="day">日</view>
+            <image class="ratioImg" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E6%88%91%E7%9A%84/%E4%B8%8A%E5%8D%87.png"></image>
+            <view class="ratioCount">100%</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="taskBox">
+        <view class="task">
+          <view class="taskItem" wx:for="{{6}}" wx:key="{{index}}">
+            <image  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E6%88%91%E7%9A%84/%E4%BB%BB%E5%8A%A1%E4%B8%AD%E5%BF%83.png"></image>
+            任务中心
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- tab空位 -->
+    <view slot="empty">
+      <view class="empty"></view>
+    </view>
+  </view>
+</scroll-Box>

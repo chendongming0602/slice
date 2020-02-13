@@ -5,7 +5,8 @@
     "pages/datas/basics/basics",
     "pages/datas/mate/mate",
     "pages/datas/replenish/replenish",
-    "pages/datas/datas1/datas1"
+    "pages/datas/datas1/datas1",
+    "pages/detail/detail"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

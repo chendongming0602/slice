@@ -1,0 +1,14 @@
+<view class="item">
+  <view class="left">
+    <view>向别：<text>难的立刻</text></view>
+    <view>向别：<text>难的立刻</text></view>
+    <view>向别：<text>难的立刻</text></view>
+    <view>向别：<text>难的发立刻</text></view>
+  </view>
+  <view class="right">
+    <view>向别：<text>难的的立刻</text></view>
+    <view>向别：<text>难的发立刻</text></view>
+    <view>向别：<text>难的发立刻</text></view>
+    <view>向别：<text>难的立刻</text></view>
+  </view>
+</view>

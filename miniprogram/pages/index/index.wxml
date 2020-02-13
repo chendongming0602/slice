@@ -10,8 +10,7 @@
 </view>
 <view hidden="{{tabCount!==2}}">
   <view wx:if="{{tabIf[2]}}" >
-    3
+    <tab3></tab3>
   </view>
 </view>
-<view class="empty"></view>
 <tab tabCount="{{tabCount}}" bind:tabIdex="tabIdex"></tab>

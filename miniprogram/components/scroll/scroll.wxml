@@ -16,6 +16,7 @@
   <view class="main" style="transform:translateY({{offset * 2}}rpx);">
     <slot name="main"></slot>    <!-- 内容 -->
     <slot name="reach-bottom-ele"></slot>    <!-- 上拉 -->
+    <slot name="empty"></slot>
   </view>
   <view id="bottom"></view>
 </scroll-view>

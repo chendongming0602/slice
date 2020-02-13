@@ -3,7 +3,7 @@ const APP = getApp()
 
 Page({
   data: {
-    tabCount:1,//选择的tab
+    tabCount:2,//选择的tab
     tabIf:[false,false,false],
   },
   tabIdex(e){//tab事件

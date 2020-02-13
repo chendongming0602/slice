@@ -62,6 +62,13 @@
 					"id": -1,
 					"name": "资料1（选泽对象）",
 					"pathName": "pages/datas/datas1/datas1",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "详情",
+					"pathName": "pages/detail/detail",
 					"scene": null
 				}
 			]
