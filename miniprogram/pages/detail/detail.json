@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "lists":"/components/lists/lists"
+    "lists":"/components/lists/lists",
+    "titles":"/components/titles/titles"
   }
 }

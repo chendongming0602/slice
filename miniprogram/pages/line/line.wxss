@@ -1,0 +1,44 @@
+@import "/style/scroll.wxss";
+page{
+  background: #F9F9F9;
+}
+.title{
+  background: #fff;
+  padding: 35rpx 40rpx;
+  margin-top: 20rpx;
+}
+.title text{
+  font-weight: bold;
+  color: #FF5959;
+}
+.listBox{
+  padding: 0 20rpx;
+}
+.list{
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16rpx;
+  border-radius:8rpx;
+}
+.count{
+  display: flex;
+  align-items: center;
+  padding: 35rpx;
+}
+.count image{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
+}
+.money{
+  min-width: 170rpx;
+  color: #FF5959;
+  font-size: 40rpx;
+  font-weight: bold;
+  text-align: center;
+  height: 100%;
+  padding: 35rpx 0;
+  border-left: 1rpx dashed #f00;
+}

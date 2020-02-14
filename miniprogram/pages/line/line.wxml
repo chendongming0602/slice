@@ -1,0 +1,15 @@
+<view class="title">
+  账户余额：<text>2 红线</text>
+</view>
+
+<view class="listBox">
+  <view class="list" wx:for="{{5}}" wx:key="{{indexr}}">
+    <view class="count">
+      <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E8%B4%AD%E4%B9%B0%E7%BA%A2%E7%BA%BF/logo.png"></image>
+      10红线
+    </view>
+    <view class="money">
+      ¥9999
+    </view>
+  </view>
+</view>

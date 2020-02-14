@@ -1,10 +1,10 @@
-// components/lists/lists.js
+// components/titles/titles.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    isShow:Number
+
   },
 
   /**

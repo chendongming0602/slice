@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "tabTop":"/components/tabTop/tabTop"
+  }
+}

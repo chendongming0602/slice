@@ -1,0 +1,56 @@
+@import "/style/scroll.wxss";
+.tabTopBox{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 1;
+}
+.tabTopEmpty{
+  height: 100rpx;
+}
+.listBox{
+  padding: 0 40rpx 40rpx;
+}
+.lists{
+  display: flex;
+  align-items: center;
+  padding-bottom: 40rpx;
+  border-bottom: 1rpx solid var(--borB);
+  margin-top: 40rpx;
+}
+
+.pic{
+  width: 152rpx;
+  height: 152rpx;
+  margin-right: 26rpx;
+  border-radius: 50%;
+}
+.nameBox{
+  height: 152rpx;
+  position: relative;
+  padding-top: 18rpx;
+}
+.name{
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.sex{
+  color: #BFBFBF;
+  margin-top: auto;
+  position: absolute;
+  bottom: 15rpx;
+}
+.sex text,.age text{
+  color: #333;
+  font-weight: bold;
+  margin-left: 10rpx;
+}
+.age{
+  color: #BFBFBF;
+  align-self: flex-end;
+  margin:0 0 15rpx 20rpx;
+}
+.age text{
+  margin-top: 0;
+}

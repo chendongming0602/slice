@@ -1,0 +1,24 @@
+<scroll-Box
+  class="scroll-box"
+  bind:pulldown="onPullDown"
+  bind:reachbottom="onReachBottom"
+>
+  <view class="pulldown-loadng" slot="pulldown-loading-ele">
+    <view class="loading-icon-text">
+      <!-- <image class="loadingImg"  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/jmx_skin/components/emotion/love2.png"></image> -->
+      正在刷新...
+    </view>
+  </view>
+  <view slot="main" class="main">
+    <view class="listBox" wx:for="{{10}}" wx:key="{{index}}">
+      <view class="nameBox">
+        <view class="pic" style="background:url('http://minis-resources-1252149780.cosgz.myqcloud.com/lovers_magpie%20/logo.jpg') no-repeat center/cover"></view>
+        <view>
+          <view class="name">收到货发</view>
+          <view class="deta">啥东方红我阿萨德很反感</view>
+        </view>
+      </view> 
+      <view class="time">4个小事情</view>
+    </view>
+  </view>
+</scroll-Box>

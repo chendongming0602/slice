@@ -1,0 +1,22 @@
+<view class="tabTopBox">
+  <tabTop bind:tabTop="tabTop"></tabTop>
+</view>
+<view class="tabTopEmpty"></view>
+<template name="collect">
+  <navigator class="lists">
+    <view class="pic" style="background:url('http://minis-resources-1252149780.cosgz.myqcloud.com/lovers_magpie%20/logo.jpg') no-repeat center/cover"></view>
+    <view class="nameBox">
+      <view class="name">哈哈哈</view>
+      <view class="sex">性别<text>男</text></view>
+    </view>
+    <view class="age">年龄<text>1990</text></view>
+  </navigator>
+</template>
+
+<view class="listBox" hidden="{{!isTab}}">
+  <template is="collect" wx:for="{{5}}" wx:key="{{index}}"></template>
+</view>
+<view class="listBox" hidden="{{isTab}}">
+  <template is="collect" wx:for="{{2}}" wx:key="{{index}}"></template>
+</view>
+

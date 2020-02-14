@@ -22,7 +22,7 @@
           <view class="name">我是哈哈哈哈</view>
         </view>
           
-        <lists></lists>
+        <lists isShow="1"></lists>
       </view>
     </view>
 

@@ -69,6 +69,34 @@
 					"id": -1,
 					"name": "详情",
 					"pathName": "pages/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "收藏",
+					"pathName": "pages/collect/collect",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "查看",
+					"pathName": "pages/look/look",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购买红线",
+					"pathName": "pages/line/line",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "消息",
+					"pathName": "pages/info/info",
 					"scene": null
 				}
 			]

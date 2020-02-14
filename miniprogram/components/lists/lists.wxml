@@ -1,4 +1,4 @@
-<view class="item">
+<view class="item" wx:if="{{isShow===1}}">
   <view class="left">
     <view>向别：<text>难的立刻</text></view>
     <view>向别：<text>难的立刻</text></view>
@@ -10,5 +10,23 @@
     <view>向别：<text>难的发立刻</text></view>
     <view>向别：<text>难的发立刻</text></view>
     <view>向别：<text>难的立刻</text></view>
+  </view>
+</view>
+
+<view wx:else>
+  <view class="item" >
+    <view class="left">
+      <view>向别：<text>12152立刻</text></view>
+      <view>向别：<text>难的立刻</text></view>
+      <view>向别：<text>难的立刻</text></view>
+    </view>
+    <view class="right">
+      <view>向别：<text>难的的立刻</text></view>
+      <view>向别：<text>难的发立刻</text></view>
+      <view>向别：<text>难的发立刻</text></view>
+    </view>
+  </view>
+  <view class="more">
+    更多说明<text> 我的要求很简单，要漂亮， 有钱，孝顺，因为我的胃不好，要 吃软饭</text>
   </view>
 </view>

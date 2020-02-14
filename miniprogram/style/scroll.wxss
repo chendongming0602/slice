@@ -53,9 +53,11 @@ view,image,navigator,textarea{
   box-sizing: border-box;
   display: block;
   color: #333;
+  font-size: 36rpx;
 }
 text{
   color: #333;
+  font-size: 36rpx;
 }
 Page{
   --borB:#E0E0E0;

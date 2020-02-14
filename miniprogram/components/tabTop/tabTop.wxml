@@ -1,0 +1,5 @@
+<view class="tabTop">
+  <view class="tabTopL {{scroll?'activeScroll':''}}" catchtap="tabTop" data-index="1">我的收藏</view>
+  <view class="tabTopR {{!scroll?'activeScroll':''}}" catchtap="tabTop" data-index="2" >收藏我的</view>
+  <view class="scroll  {{!scroll?'activeScrollLeft':''}}"></view>
+</view>

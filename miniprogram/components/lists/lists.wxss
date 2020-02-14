@@ -20,3 +20,10 @@
   text-overflow:ellipsis;
   overflow: hidden;
 }
+.more{
+  margin-top: 40rpx;
+  color: #BFBFBF;
+}
+.more text{
+  margin-left: 5rpx;
+}

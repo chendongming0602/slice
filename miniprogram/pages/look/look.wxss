@@ -1,0 +1,2 @@
+@import "/style/scroll.wxss";
+@import "/pages/collect/collect.wxss";

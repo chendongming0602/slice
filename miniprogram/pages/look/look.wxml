@@ -1,0 +1,11 @@
+<import src="/pages/collect/collect.wxml"/>
+<view class="tabTopBox">
+  <tabTop bind:tabTop="tabTop"></tabTop>
+</view>
+<view class="tabTopEmpty"></view>
+<view class="listBox" hidden="{{!isTab}}">
+  <template is="collect" wx:for="{{5}}" wx:key="{{index}}"></template>
+</view>
+<view class="listBox" hidden="{{isTab}}">
+  <template is="collect" wx:for="{{2}}" wx:key="{{index}}"></template>
+</view>

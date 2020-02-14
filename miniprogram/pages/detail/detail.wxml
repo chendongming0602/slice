@@ -16,28 +16,16 @@
   </view>
 </view>
 
-<view class="datasBox">
-  <view class="datas">
-    基本资料
-    <view class="rightIcon">
-      修改
-      <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
-    </view>
-  </view>
+<view class="titleTop">
+  <titles></titles>
 </view>
 
 <view class="lists">
-  <lists></lists>
+  <lists isShow="1"></lists>
 </view>
 
-<view class="datasBox">
-  <view class="datas">
-    联系方式
-    <view class="rightIcon">
-      修改
-      <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
-    </view>
-  </view>
+<view class="titleTop">
+  <titles></titles>
 </view>
 <view class="phoneBox">
   <view class="phone">
@@ -48,7 +36,7 @@
         点击获取
       </view>
     </view>
-    <!-- <view class="phoneR">复制</view> -->
+    <view class="phoneR" hidden="{{true}}">复制</view>
   </view>
 
   <view class="relation">
@@ -56,5 +44,50 @@
       与本人的关系<text>本人</text>
     </view>
     <view class="phoneR relaR">修改</view>
+  </view>
+</view>
+
+<view class="titleTop mateBox">
+  <titles></titles>
+</view>
+<view class="mates">
+  <lists isShow="2"></lists>
+</view>
+
+<view class="titleTop">
+  <titles></titles>
+</view>
+<view class="mates">
+  <lists isShow="2"></lists>
+</view>
+
+<view class="titleTop mateBox" >
+  <titles></titles>
+</view>
+<view class="albumBox" wx:if="{{false}}">
+  <view class="albumImg" wx:for="{{5}}" wx:key="{{index}}">
+    <image src="http://minis-resources-1252149780.cosgz.myqcloud.com/lovers_magpie%20/logo.jpg"></image>
+  </view>
+</view>
+<view class="albumEmpty" wx:else>
+  <view style="background:url('https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E8%AF%A6%E6%83%85/%E8%8E%B7%E5%8F%96%E5%9B%BE%E7%89%87.png') no-repeat center/cover">
+    点击获取
+  </view>
+</view>
+
+<view class="button">
+  <view class="assist">
+    <image src="{{assistImg?'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E8%AF%A6%E6%83%85/%E5%B7%B2%E7%82%B9%E8%B5%9E.png':'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E8%AF%A6%E6%83%85/%E6%9C%AA%E7%82%B9%E8%B5%9E.png'}}"></image>
+    已点赞
+  </view>
+  <view class="enshrine">
+    <image src="{{enshrineImg?'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E8%AF%A6%E6%83%85/%E5%B7%B2%E6%94%B6%E8%97%8F.png':'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E8%AF%A6%E6%83%85/%E6%9C%AA%E6%94%B6%E8%97%8F.png'}}"></image>
+    已点赞
+  </view>
+  <view class="share">
+    <button>
+      <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E6%88%91%E7%9A%84/%E8%BD%AC%E5%8F%91.png"></image>
+      转发资料
+    </button>
   </view>
 </view>
