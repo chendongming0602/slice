@@ -74,7 +74,7 @@ view{
   width: 32rpx;
   height: 32rpx;
   margin-left: 5rpx;
-  transition: .5s;
+  transition: .3s;
 }
 .itemBox{
   display: flex;

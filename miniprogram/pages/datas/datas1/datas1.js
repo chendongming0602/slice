@@ -23,7 +23,8 @@ Page({
     kithList:[
       "阿斯蒂",
       "d时代峰"
-    ]
+    ],
+    isNext:true
   },
 
   selfE(){//本人
@@ -77,11 +78,20 @@ Page({
       value
     })
   },
+  nextE(){//下一步/完成
+    wx.navigateTo({
+      url: '/pages/datas/basics/basics',
+    });
+  },
+  noE(){//暂不填写
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let {come}=options,that=this;
+    if(come) that.setData({isNext:false});
   },
 
   /**

@@ -20,7 +20,7 @@ Page({
     ],
     houseValue:"",//婚房
     conditionValue:"",//状况
-    albums:[
+    urls:[
       "",
       "",
       "",
@@ -50,6 +50,14 @@ Page({
 
   textareaEvent(e){//更多择偶要求
     let {value}=e.detail;
+  },
+  returnImg(e){
+    let {urls}=e.detail,that=this;
+    urls.length=6;
+    this.setData({urls})
+  },
+  addE(){
+    this.selectComponent('#album').isShowE("a");
   },
   /**
    * 生命周期函数--监听页面加载

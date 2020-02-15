@@ -29,6 +29,7 @@ Page({
     ],
     houseValue:"",//婚房
     educValue:"",//学历
+    isNext:true
   },
   changeSex(e){//年龄
     let that=this,{value}=e.detail;
@@ -94,9 +95,18 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  nextE(){//下一步/完成
+    wx.navigateTo({
+      url: '/pages/datas/replenish/replenish',
+    });
+  },
+  noE(){//暂不填写
+    
+  },
   onLoad: function (options) {
-    let timeEnd=new Date().getFullYear()+"-01-01";
-    this.setData({timeEnd})
+    let{come}=options,that=this,timeEnd=new Date().getFullYear()+"-01-01";
+    that.setData({timeEnd});
+    if(come) that.setData({isNext:false});
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

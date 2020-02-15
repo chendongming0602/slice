@@ -1,0 +1,9 @@
+<!-- 用来压缩过大的上传图片的 -->
+<canvas canvas-id="compress" class="canvas" style="height:{{canvasHeight}}px;"></canvas>
+<view class="allAlbum" hidden="{{isShow}}" catchtouchmove="true">
+  <view class="allBox">
+    <view class="camera" catchtap="cameraHandler">相机</view>
+    <view class="seAlbum" catchtap="albumHandler">从相册选择</view> 
+    <view class="cancel" catchtap="closeIsAllAlbum">取消</view> 
+  </view>
+</view>

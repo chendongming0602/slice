@@ -1,3 +1,4 @@
+<album bind:returnImg="returnImg" id="album"></album>
 <view class="box">
   <image class="top" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/top.png"></image>
   <view class="empty"></view>
@@ -58,12 +59,15 @@
   <view class="albumBox">
     <view class="albumTitle">照片（第一张图片将默认认为头像） 上传真实照片，匹配率更高</view>
     <view class="album">
-      <view class="albumItem" wx:for="{{albums}}" wx:key="{{index}}">
+      <view class="albumItem" wx:for="{{urls}}" wx:key="{{index}}">
         <view class="albumItem2">
-          <image wx:if="{{!item}}" class="add" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/replenish/add.png"></image>
+          <view wx:if="{{!item.path}}" class="addBox" catchtap="addE">
+            <image class="add" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/replenish/add.png"></image>            
+          </view>
+
 
           <view wx:else class="urlAlbum">
-            <image mode="scaleToFill" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/top.png"></image>
+            <image mode="aspectFill" src="{{item.path}}"></image>
             <view>替 换</view>
           </view>
         </view>
@@ -72,7 +76,7 @@
     </view>
   </view>
   <view class="button">
-    <view>暂不填写</view>
-    <view class="next">完成</view>
+    <view catchtap="noE">暂不填写</view>
+    <view class="next" catchtap="nextE">完成</view>
   </view>
 </view>

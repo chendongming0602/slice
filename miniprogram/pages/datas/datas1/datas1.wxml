@@ -43,7 +43,7 @@
   </view>
 
   <view class="button">
-    <view>暂不填写</view>
-    <view class="next">完成</view>
+    <view catchtap="noE">暂不填写</view>
+    <view class="next"  catchtap="nextE">{{isNext?'下一步':'完成'}}</view>
   </view>
 </view>

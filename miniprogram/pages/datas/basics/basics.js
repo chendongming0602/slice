@@ -23,6 +23,7 @@ Page({
     educValue:"",//学历
     statureValue:"",//身高
     occupValue:"",//职业
+    isNext:true
   },
   changeSex(e){//性别
     let that=this,{value}=e.detail;
@@ -82,12 +83,21 @@ Page({
     let {value}=e.detail;
     this._phone=value;
   },
+  nextE(){//下一步/完成
+    wx.navigateTo({
+      url: '/pages/datas/mate/mate',
+    });
+  },
+  noE(){//暂不填写
+    
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let timeEnd=new Date().getFullYear()+"-01-01";
-    this.setData({timeEnd})
+    let{come}=options,that=this,timeEnd=new Date().getFullYear()+"-01-01";
+    that.setData({timeEnd});
+    if(come) that.setData({isNext:false});
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
