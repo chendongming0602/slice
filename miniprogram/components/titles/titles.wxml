@@ -1,9 +1,9 @@
 <view class="datasBox">
   <view class="datas">
-    更多资料
-    <view class="rightIcon">
+    {{title}}
+    <navigator class="rightIcon" url="{{url}}" hover-class="none">
       修改
       <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
-    </view>
+    </navigator>
   </view>
 </view>

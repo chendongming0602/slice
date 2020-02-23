@@ -1,0 +1,21 @@
+<view class="lgBox" wx:if="{{false}}">
+  <view class="consume">
+    <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E8%B4%AD%E4%B9%B0%E7%BA%A2%E7%BA%BF/%E5%85%B3%20%20%E9%97%AD.png" class="close"></image>
+    <view class="hint">温馨提示</view>
+    <view class="residue">
+      拥有的红线:
+      <view>
+        6
+      </view>
+      <image class="" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E8%B4%AD%E4%B9%B0%E7%BA%A2%E7%BA%BF/logo.png" ></image>
+    </view>
+    <view class="acquire">
+      获取联系方式，<text>红线-1</text>
+    </view>
+
+    <view class="but">
+      <view>取消</view>
+      <view class="confirm">确定</view>
+    </view>
+  </view>
+</view>

@@ -24,15 +24,19 @@ Component({
    */
   methods: {
     isShowE(e){
-      let that=this;
-      if(e==="a"){
+      let that=this,{clas,index,entrance}=e;
+      that._entrance=entrance;
+      that._index="";
+      if(clas==="a"){
         if(!that._urls){
           that._count=6;
         }else{
           that._count=6-that._urls.length;
         }
+      }else{
+        that._count=1;
+        that._index=index;
       }
-      console.log(that._count)
       that.setData({isShow:false});
     },
     closeIsAllAlbum(){
@@ -100,25 +104,41 @@ Component({
         sizeType: ['compressed'],
         sourceType: ['album'],
         success: res => {
-          that._temps=res.tempFiles;
-          this.triggerEvent("returnImg",{urls:that._temps})
-          if(this.isImg()) return APP.toastShow("请选择图片类型~");
-          that.reduce();
+          that.closeIsAllAlbum();
+          console.log(that._index)
+          if(that._entrance){//修改
+            console.log("修改")
+          }else{
+            if(that._index!==""){//替换(第一次进入)
+              that._urls[that._index].path=res.tempFiles[0].path;
+            }else{//添加
+              if(!that._urls){
+                that._urls=res.tempFiles;
+              }else{
+                res.tempFiles.map(t=>{
+                  that._urls.push(t)
+                });
+              };
+            };
+          }
+          
+          that.triggerEvent("returnImg",{urls:that._urls});
+          // if(that.isImg()) return APP.toastShow("请选择图片类型~");
+          // that.reduce();
         }
       });
     },
     reduce(){
       let arr1=[],arr2=[],that=this;
-      that._temps.map((t)=>{
+      that._urls.map((t)=>{
         arr1.push(this.compressImage(t)) 
       });
       Promise.all(arr1).then(res=>{//同步压缩
-        that._urls=res;
+       
         res.map(t=>{
           arr2.push(gfs.isAlbumGF(t))
         });
         Promise.all(arr2).then(res=>{//同步微信审核
-         console.log(that._urls)
         }).catch(err=>{//审核不通过
           console.log(err,444)
         })

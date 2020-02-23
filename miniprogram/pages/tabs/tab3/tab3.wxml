@@ -13,15 +13,15 @@
     <view class="picBox">
       <view class="pic"></view>
       <view class="name">我是啊发逗号啊</view>
-      <navigator class="changeData">
+      <navigator class="changeData" hover-class="none" url="/pages/detail/detail">
         <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E6%88%91%E7%9A%84/changeData.png"></image>
-        修改
+        修改资料
       </navigator>
     </view>
 
     <view class="detailsBox">
       <view class="share">
-        <button>  
+        <button open-type="share">  
           <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E6%88%91%E7%9A%84/%E8%BD%AC%E5%8F%91.png"></image>
           转发资料
         </button>
@@ -53,9 +53,10 @@
             <image class="ratioImg" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E6%88%91%E7%9A%84/%E4%B8%8A%E5%8D%87.png"></image>
             <view class="ratioCount">100%</view>
           </view>
-
+<!-- https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E6%88%91%E7%9A%84/%E4%B8%8B%E9%99%8D.png   下降 -->
+<!-- https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E6%88%91%E7%9A%84/%E5%B9%B3%E8%A1%A1.png 平衡 -->
           <view class="ratio">
-            <view class="day">日</view>
+            <view class="day">周</view>
             <image class="ratioImg" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E6%88%91%E7%9A%84/%E4%B8%8A%E5%8D%87.png"></image>
             <view class="ratioCount">100%</view>
           </view>
@@ -64,9 +65,10 @@
 
       <view class="taskBox">
         <view class="task">
-          <view class="taskItem" wx:for="{{6}}" wx:key="{{index}}">
-            <image  src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E6%88%91%E7%9A%84/%E4%BB%BB%E5%8A%A1%E4%B8%AD%E5%BF%83.png"></image>
-            任务中心
+          <view class="taskItem" wx:for="{{tasks}}" wx:key="{{index}}">
+            <view class="infoRed" wx:if="{{index===2}}"></view>
+            <image  src="{{item.img}}"></image>
+            {{item.title}}
           </view>
         </view>
       </view>

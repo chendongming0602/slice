@@ -1,3 +1,8 @@
+
+<!-- 消耗提示框 -->
+<consume></consume>
+<!-- 完善资料提示框 -->
+<lookData></lookData>
 <view class="nameBox" style="background:url('http://minis-resources-1252149780.cosgz.myqcloud.com/lovers_magpie%20/logo.jpg') no-repeat center/cover">
   <view class="picBox" style="background:url('http://minis-resources-1252149780.cosgz.myqcloud.com/lovers_magpie%20/logo.jpg') no-repeat center/cover"></view>
   <view class="name">的首付款</view>
@@ -17,7 +22,7 @@
 </view>
 
 <view class="titleTop">
-  <titles></titles>
+  <titles title="基础资料" url="/pages/datas/basics/basics?come=1"></titles>
 </view>
 
 <view class="lists">
@@ -25,7 +30,7 @@
 </view>
 
 <view class="titleTop">
-  <titles></titles>
+  <titles title="联系方式" url="/pages/datas/basics/basics?come=1"></titles>
 </view>
 <view class="phoneBox">
   <view class="phone">
@@ -48,21 +53,21 @@
 </view>
 
 <view class="titleTop mateBox">
-  <titles></titles>
+  <titles title="择偶要求" url="/pages/datas/mate/mate?come=1"></titles>
 </view>
 <view class="mates">
   <lists isShow="2"></lists>
 </view>
 
 <view class="titleTop">
-  <titles></titles>
+  <titles title="更多资料" url="/pages/datas/replenish/replenish?come=1"></titles>
 </view>
 <view class="mates">
   <lists isShow="2"></lists>
 </view>
 
 <view class="titleTop mateBox" >
-  <titles></titles>
+  <titles title="相册" url="/pages/datas/replenish/replenish?come=1"></titles>
 </view>
 <view class="albumBox" wx:if="{{false}}">
   <view class="albumImg" wx:for="{{5}}" wx:key="{{index}}">
@@ -76,18 +81,27 @@
 </view>
 
 <view class="button">
-  <view class="assist">
-    <image src="{{assistImg?'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E8%AF%A6%E6%83%85/%E5%B7%B2%E7%82%B9%E8%B5%9E.png':'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E8%AF%A6%E6%83%85/%E6%9C%AA%E7%82%B9%E8%B5%9E.png'}}"></image>
-    已点赞
-  </view>
-  <view class="enshrine">
-    <image src="{{enshrineImg?'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E8%AF%A6%E6%83%85/%E5%B7%B2%E6%94%B6%E8%97%8F.png':'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E8%AF%A6%E6%83%85/%E6%9C%AA%E6%94%B6%E8%97%8F.png'}}"></image>
-    已点赞
-  </view>
-  <view class="share">
-    <button>
-      <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E6%88%91%E7%9A%84/%E8%BD%AC%E5%8F%91.png"></image>
-      转发资料
-    </button>
-  </view>
+  <block wx:if="{{false}}">
+    <view class="assist">
+      <image src="{{assistImg?'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E8%AF%A6%E6%83%85/%E5%B7%B2%E7%82%B9%E8%B5%9E.png':'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E8%AF%A6%E6%83%85/%E6%9C%AA%E7%82%B9%E8%B5%9E.png'}}"></image>
+      已点赞
+    </view>
+    <view class="enshrine">
+      <image src="{{enshrineImg?'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E8%AF%A6%E6%83%85/%E5%B7%B2%E6%94%B6%E8%97%8F.png':'https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E8%AF%A6%E6%83%85/%E6%9C%AA%E6%94%B6%E8%97%8F.png'}}"></image>
+      已点赞
+    </view>
+    <view class="share">
+      <button>
+        <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E6%88%91%E7%9A%84/%E8%BD%AC%E5%8F%91.png"></image>
+        转发资料
+      </button>
+    </view>
+  </block>
+
+    <view class="share share2" wx:else>
+      <button>
+        <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/%E6%88%91%E7%9A%84/%E8%BD%AC%E5%8F%91.png"></image>
+        转发资料
+      </button>
+    </view>
 </view>

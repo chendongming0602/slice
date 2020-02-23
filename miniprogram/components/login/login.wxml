@@ -1,0 +1,9 @@
+<view class="lgBox">
+  <view class="lgContent">
+    <view class="lgNot">你还未登录</view>
+    <view class="lgPlease">请先登录再进行操作</view>
+    <image class="lgImg" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/album/my/login.png"></image>
+    <button hover-class="none" class="lgBtn" open-type="getUserInfo" bindgetuserinfo="getUserInfo">登录</button>
+    <view class="lgNoBtn" catchtap="lgNoBtn">暂不登录</view>
+  </view>
+</view>

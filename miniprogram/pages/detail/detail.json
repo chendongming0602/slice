@@ -1,6 +1,8 @@
 {
   "usingComponents": {
     "lists":"/components/lists/lists",
+    "consume":"/components/consume/consume",
+    "lookData":"/components/lookData/lookData",
     "titles":"/components/titles/titles"
   }
 }

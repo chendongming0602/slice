@@ -249,6 +249,18 @@ const income=[
   "9万~9.5万",
   "9.5万~10万",
   "10万以上"
+];
+const year=[
+  "10万以下",
+  "10万~15万",
+  "15万~20万",
+  "20万~25万",
+  "25万~30万",
+  "30万~35万",
+  "35万~40万",
+  "40万~45万",
+  "45万~50万",
+  "50万以上"
 ]
 
 export default {
@@ -258,5 +270,6 @@ export default {
   occupation,
   stature,
   age,
-  income
+  income,
+  year
 }

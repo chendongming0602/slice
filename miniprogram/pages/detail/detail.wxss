@@ -186,3 +186,6 @@ page{
   background: #51CA4E;
   color: #fff;
 }
+.share2 button{
+  width: 100%;
+}

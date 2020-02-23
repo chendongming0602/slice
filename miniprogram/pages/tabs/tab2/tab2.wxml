@@ -10,9 +10,9 @@
     </view>
   </view>
   <view slot="main">
-    <swiper class="swiper">
+    <swiper class="swiper" indicator-dots="true" indicator-color="#D8D8D8" indicator-active-color="#424242">
       <swiper-item wx:for="{{3}}" wx:key="{{index}}">
-        <image src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/jmx_skin/components/emotion/userPic.png"></image>
+        <image  src="http://marry.yazai.com/static/images/constellation/capricorn.png"></image>
       </swiper-item>
     </swiper>
     <view class="listBot">

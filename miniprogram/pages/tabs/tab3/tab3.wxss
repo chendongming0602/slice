@@ -19,7 +19,7 @@
   font-size: 42rpx;
   overflow: hidden;
   white-space: nowrap;
-  max-width: 340rpx;
+  max-width: 290rpx;
   text-overflow: ellipsis;
 }
 .changeData{
@@ -159,9 +159,20 @@
   text-align: center;
   font-size: 42rpx;
   margin-top: 54rpx;
+  position: relative;
 }
 .taskItem image{
   width: 130rpx;
   height: 130rpx;
   margin: 0 auto;
+}
+.infoRed{
+  width:26rpx;
+  height:26rpx;
+  background:rgba(214,19,19,1);
+  border:3rpx solid rgba(255,255,255,1);
+  position: absolute;
+  top: 13rpx;
+  right: 130rpx;
+  border-radius: 50%;
 }

@@ -18,6 +18,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onPullDown(e){
+      const { stop } = e.detail;
+      setTimeout(()=>{
+        stop()
+        console.log(444)
+      },1000)
+    },
   }
 })

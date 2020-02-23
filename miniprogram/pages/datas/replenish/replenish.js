@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    income:datas.income,
+    income:datas.year,
     incomeValue:"",//收入
     house:[
       "有",
@@ -52,12 +52,17 @@ Page({
     let {value}=e.detail;
   },
   returnImg(e){
-    let {urls}=e.detail,that=this;
-    urls.length=6;
-    this.setData({urls})
+    let {urls}=e.detail,that=this,urlss=[...urls];
+    urlss=urlss.map(t=>t.path);
+    urlss.length=6;
+    that.setData({urls:urlss})
   },
-  addE(){
-    this.selectComponent('#album').isShowE("a");
+  addE(){//添加按钮
+    this.selectComponent('#album').isShowE({clas:"a",entrance:1});
+  },
+  changeAlbum(e){//替换
+    let {index}=e.currentTarget.dataset;
+    this.selectComponent('#album').isShowE({clas:"t",index,entrance:1});
   },
   /**
    * 生命周期函数--监听页面加载

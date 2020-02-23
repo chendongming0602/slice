@@ -17,7 +17,5 @@ Page({
     this.setData({
       [`tabIf[${this.data.tabCount}]`]: true
     });
-  },
-
-
+  }
 })

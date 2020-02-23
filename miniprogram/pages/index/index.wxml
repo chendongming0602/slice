@@ -1,3 +1,4 @@
+<login wx:if="{{false}}"></login>
 <view hidden="{{tabCount!==0}}">
   <view wx:if="{{tabIf[0]}}" >
     <tab1></tab1>

@@ -8,7 +8,7 @@ Page({
    */
   data: {
     age:datas.age,
-    income:datas.income,
+    income:datas.year,
     education:datas.education,
     stature:datas.stature,
     ageValue:"",//年龄

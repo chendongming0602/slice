@@ -11,7 +11,7 @@
 
 
     <view class="item">
-      <view class="itemLeft">收入要求(月)<text>*</text></view>
+      <view class="itemLeft">收入要求(年)<text>*</text></view>
       <view class="itemRight">
         <picker range="{{income}}" bindchange="changeStature">
           <view class="pic ">
@@ -61,13 +61,13 @@
     <view class="album">
       <view class="albumItem" wx:for="{{urls}}" wx:key="{{index}}">
         <view class="albumItem2">
-          <view wx:if="{{!item.path}}" class="addBox" catchtap="addE">
+          <view wx:if="{{!item}}" class="addBox" catchtap="addE">
             <image class="add" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/replenish/add.png"></image>            
           </view>
 
 
-          <view wx:else class="urlAlbum">
-            <image mode="aspectFill" src="{{item.path}}"></image>
+          <view wx:else class="urlAlbum" catchtap="changeAlbum" data-index="{{index}}">
+            <image mode="aspectFill" src="{{item}}"></image>
             <view>替 换</view>
           </view>
         </view>

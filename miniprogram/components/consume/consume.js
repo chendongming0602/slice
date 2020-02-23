@@ -1,11 +1,10 @@
-// components/titles/titles.js
+// components/consume/consume.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    title:String,
-    url:String
+
   },
 
   /**
