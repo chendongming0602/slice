@@ -1,6 +1,6 @@
 // miniprogram/pages/datas/basics/basics.js
 import datas from "../../../utils/datas.js";
-console.log(datas)
+const APP=getApp();
 Page({
 
   /**
@@ -27,7 +27,8 @@ Page({
       "",
       "",
       ""
-    ]
+    ],
+    markValue:""
   },
   changeEduc(e){//是否有婚房
     let {value}=e.detail;
@@ -50,6 +51,7 @@ Page({
 
   textareaEvent(e){//更多择偶要求
     let {value}=e.detail;
+    this.setData({markValue:value})
   },
   returnImg(e){
     let {urls}=e.detail,that=this,urlss=[...urls];
@@ -58,11 +60,31 @@ Page({
     that.setData({urls:urlss})
   },
   addE(){//添加按钮
-    this.selectComponent('#album').isShowE({clas:"a",entrance:1});
+    this.selectComponent('#album').isShowE({clas:"a"});
   },
   changeAlbum(e){//替换
     let {index}=e.currentTarget.dataset;
-    this.selectComponent('#album').isShowE({clas:"t",index,entrance:1});
+    this.selectComponent('#album').isShowE({clas:"t",index});
+  },
+  nextE(){//完成
+    this.selectComponent("#album").reduce((res)=>{
+      console.log(res)
+    });
+    // this.requestE();
+  },
+  requestE(){
+    let values=this.data,datas={
+      person_id:APP.userInfo.id||123,
+      salary:values.incomeValue,
+      marital_status:values.conditionValue,
+      house:values.houseValue,
+      mark:values.markValue
+    }
+    return APP.request({
+      path:"/person/edit/extraInfo",
+      method:"POST",
+      data:datas
+    })
   },
   /**
    * 生命周期函数--监听页面加载

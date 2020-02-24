@@ -1,4 +1,5 @@
 // miniprogram/pages/datas/datas1/datas1.js
+const APP=getApp();
 Page({
 
   /**
@@ -79,19 +80,57 @@ Page({
     })
   },
   nextE(){//下一步/完成
-    wx.navigateTo({
-      url: '/pages/datas/basics/basics',
+    this.requestE().then(res=>{
+      APP.userInfo.person_id=res.person_id;
+      wx.navigateTo({
+        url: '/pages/datas/basics/basics',
+      });
     });
   },
   noE(){//暂不填写
 
   },
+  requestE(){
+    return APP.request({
+      path:"/person/edit/bloodRelation",
+      method:"POST",
+      data:{
+        blood_relation:this.data.value
+      }
+    });
+  },
+  before(){
+    let that=this,datas=this.data;
+    return APP.request({
+      path:"/my/detail",
+    }).then(res=>{
+      let dataDeta=JSON.stringify({...res});
+      wx.setStorageSync("dataDeta",dataDeta);//存进缓存
+      let deforeValue=res.base.blood_relation,childrenList=datas.childrenList.indexOf(deforeValue),kithList=datas.kithList.indexOf(deforeValue);
+      that.setData({value:deforeValue});
+      if(childrenList!==-1) that.setData({
+        "isCss.isChildren":false,
+        "isCss.children":true,
+        chidsIndex:childrenList,
+        isCount:2
+      });
+      if(kithList!==-1) that.setData({
+        "isCss.isKith":false,
+        "isCss.kith":true,
+        kithIndex:kithList,
+        isCount:2
+      });
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad(options) {
     let {come}=options,that=this;
-    if(come) that.setData({isNext:false});
+    if(come){
+      that.setData({isNext:false});
+      this.before();
+    } 
   },
 
   /**

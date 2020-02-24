@@ -1,5 +1,6 @@
 // miniprogram/pages/datas/basics/basics.js
 import datas from "../../../utils/datas.js";
+const APP=getApp();
 // console.log(datas)
 Page({
 
@@ -29,7 +30,8 @@ Page({
     ],
     houseValue:"",//婚房
     educValue:"",//学历
-    isNext:true
+    isNext:true,
+    markValue:"",//更多说明
   },
   changeSex(e){//年龄
     let that=this,{value}=e.detail;
@@ -91,17 +93,66 @@ Page({
   },
   textareaEvent(e){//更多择偶要求
     let {value}=e.detail;
+    this.setData({markValue:value})
+  },
+  before(){
+    if(wx.getStorageSync("dataDeta")) return this.dispose(JSON.parse(wx.getStorageSync("dataDeta")));//有缓存，拿缓存的
+    return APP.request({
+      path:"/my/detail",
+    }).then(res=>{
+      let dataDeta=JSON.stringify({...res});
+      wx.setStorageSync("dataDeta",dataDeta);//存进缓存
+      this.dispose(res)
+    })
+  },
+  dispose(res){//数据处理
+    let that=this,datas=this.data,base=res.base,census=datas.province.indexOf(base.birthplace),educValue=datas.education.indexOf(base.education),stature=datas.stature.indexOf(base.height),occupation=datas.occupation.indexOf(base.occupation);
+    if(census!==-1) that.setData({"selects.census":census});//户籍
+    if(educValue!==-1) that.setData({"selects.educValue":educValue});//学历
+    if(stature!==-1) that.setData({"selects.stature":stature});//身高
+    if(occupation!==-1) that.setData({"selects.occupation":occupation});//职业
+    that.setData({
+      name:base.nickname,
+      sexValue:"男",
+      birthValue:"1998-06-02",
+      census:base.birthplace,
+      placeValue:base.residence,
+      educValue:base.education,
+      statureValue:base.height,
+      occupValue:base.occupation,
+      phoneVlue:base.phone
+    });
   },
   /**
    * 生命周期函数--监听页面加载
    */
   nextE(){//下一步/完成
-    wx.navigateTo({
-      url: '/pages/datas/replenish/replenish',
-    });
+    this.requestE().then(res=>{
+      wx.navigateTo({
+        url: '/pages/datas/replenish/replenish',
+      });
+    })
+   
   },
   noE(){//暂不填写
     
+  },
+  requestE(){
+    let values=this.data,datas={
+      person_id:APP.userInfo.id||123,
+      age:values.ageValue,
+      height:values.birthValue,
+      salary:values.incomeValue,
+      birthplace:values.censusValue,
+      house:values.houseValue,
+      education:values.educValue,
+      mark:values.markValue
+    }
+    return APP.request({
+      path:"/person/edit/loveCondition",
+      method:"POST",
+      data:datas
+    })
   },
   onLoad: function (options) {
     let{come}=options,that=this,timeEnd=new Date().getFullYear()+"-01-01";

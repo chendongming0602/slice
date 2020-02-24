@@ -11,7 +11,7 @@
 
 
     <view class="item">
-      <view class="itemLeft">收入要求(年)<text>*</text></view>
+      <view class="itemLeft">年收入<text>*</text></view>
       <view class="itemRight">
         <picker range="{{income}}" bindchange="changeStature">
           <view class="pic ">
@@ -52,7 +52,7 @@
       <view class="itemLeft">更多择偶要求说明<text>*</text></view>
     </view>
     <view class="textBox">
-      <textarea bindinput="textareaEvent" placeholder="请填写" placeholder-class="textareaP" class="textarea"></textarea>
+      <textarea value="{{markValue}}" bindinput="textareaEvent" placeholder="请填写" placeholder-class="textareaP" class="textarea"></textarea>
     </view>
   </view>
 

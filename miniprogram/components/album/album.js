@@ -105,7 +105,6 @@ Component({
         sourceType: ['album'],
         success: res => {
           that.closeIsAllAlbum();
-          console.log(that._index)
           if(that._entrance){//修改
             console.log("修改")
           }else{
@@ -128,21 +127,32 @@ Component({
         }
       });
     },
-    reduce(){
-      let arr1=[],arr2=[],that=this;
+    reduce(elents){
+      let arr1=[],arr2=[],that=this,arr3=[];
       that._urls.map((t)=>{
         arr1.push(this.compressImage(t)) 
       });
-      Promise.all(arr1).then(res=>{//同步压缩
-       
+       Promise.all(arr1).then(res=>{//同步压缩
         res.map(t=>{
-          arr2.push(gfs.isAlbumGF(t))
+          arr2.push(gfs.isAlbumGF(t));
+          arr3.push(APP.uploadFile({
+            path:"/person/edit/photo",
+            data:t,
+            ids:{
+              person_id:123
+            }
+          }));
         });
         Promise.all(arr2).then(res=>{//同步微信审核
+          console.log(8888)
+           Promise.all(arr3).then(res=>{
+            elents(res)
+            //  console.log(res)
+           })
         }).catch(err=>{//审核不通过
           console.log(err,444)
         })
-      })
+      });
     },
     isImg(){//判断是否是图片类型
       let reg= /\.(png|jpg|jpeg)(\?.*)?$/,isJpg=this._temps.map(t=>{

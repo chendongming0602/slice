@@ -9,12 +9,17 @@ try{
 }catch(err){}
 
 App({
-  onLaunch: function () {
-    this.getUserPic()
-
-    this.globalData = {}
+  userInfo:{//用户信息
+    person_id:undefined
   },
-  
+  onLaunch: function () {
+    this.getUserPic();
+  },
+  eliminate(text){//清除两边空格
+    text.toString().trim();
+    if(text.toString().trim().length>0) return text.toString().trim();
+    return false
+  },
   getUserPic(){//授权请求
     return new Promise((resolve,reject)=>{
       wx.getSetting({
@@ -93,10 +98,11 @@ App({
     // }
     return new Promise((resolve, reject) => {
       const headers = {
-        "XX-Wxapp-AppId": config.appid,
-        "XX-Token": tokens ? tokens:'',
-        "XX-Api-Version": config.version,
-        "XX-Device-Type": config.deviceType
+        // "XX-Wxapp-AppId": config.appid,
+        // "XX-Token": tokens ? tokens:'',
+        // "XX-Api-Version": config.version,
+        // "XX-Device-Type": config.deviceType
+        "Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwZXJzb24iOnsiaWQiOjEsIm5pY2tuYW1lIjoiXHU1ZjIwXHU1ZjIwIn0sInVzZXJJZCI6MX0.hR9aTGOgOeL0tV082KMt1dS7dTcWGqQbs9OnFw1TqE8"
       };
       wx.request({
         url: `${config.apiHost}${path}`,
@@ -104,7 +110,7 @@ App({
         header: headers,
         data: data || {},
         success: res => {
-          let data=res.data
+          let data=res.data;
           if (data.code === 1 || res.statusCode===200){
             if (data.code === 10001) {
               this.userLogin();//重新登录
@@ -112,10 +118,9 @@ App({
               resolve(data.data)
             }
           }else if(res){
-            
             reject(res)
           }else{
-            wx.showToast({
+            wx.toastShow({
               title: '小程序开启失败',
               icon: "none"
             });
@@ -124,6 +129,35 @@ App({
         fail: reject
       });
     });
+  },
+
+  uploadFile({ path = "/", data, ids={},}){
+    // let tokens = "";
+    // try {
+    //   tokens = wx.getStorageSync("tokens");
+    // } catch (err) {
+    //   console.log("获取缓存token失败", tokens)
+    // };
+    const headers = {
+      "Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwZXJzb24iOnsiaWQiOjEsIm5pY2tuYW1lIjoiXHU1ZjIwXHU1ZjIwIn0sInVzZXJJZCI6MX0.hR9aTGOgOeL0tV082KMt1dS7dTcWGqQbs9OnFw1TqE8"
+    };
+    return new Promise((resolve,reject)=>{
+      wx.uploadFile({
+        url: `${config.apiHost}${path}`,
+        filePath: data,
+        name: 'file',
+        header:headers,
+        formData:ids,
+        success:res=>{
+          if (res.statusCode===200){
+            resolve(res.data)
+          }else{
+            reject();
+          }
+        },
+        fail: reject
+      })
+    })
   },
   loadShow(text="加载中...",is=true){
     wx.showLoading({

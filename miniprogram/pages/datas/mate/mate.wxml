@@ -3,7 +3,7 @@
 <view class="empty"></view>
 
 <view class="title">
-  <view>基础资料</view>
+  <view>择偶要求</view>
 </view>
 
 <view class="listBox">
@@ -84,7 +84,7 @@
   <view class="item explain">
     <view class="itemLeft">更多择偶要求说明<text>*</text></view>
   </view>
-  <textarea bindinput="textareaEvent" placeholder="请填写" placeholder-class="textareaP" class="textarea"></textarea>
+  <textarea value="{{markValue}}" bindinput="textareaEvent" placeholder="请填写" placeholder-class="textareaP" class="textarea"></textarea>
 </view>
   <view class="button">
     <view catchtap="noE">暂不填写</view>

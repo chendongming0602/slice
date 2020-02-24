@@ -9,7 +9,8 @@
 <view class="listBox">
   <view class="item">
     <view class="itemLeft">昵称<text>*</text></view>
-    <view class="itemRight">系统自动生成</view>
+    <view wx:if="{{isNext}}" class="itemRight">系统自动生成</view>
+    <input bindinput="changeName" maxlength="18" class="nameInput" wx:else value="{{name}}"></input>
   </view>
   <view class="item">
     <view class="itemLeft">性别<text>*</text></view>
@@ -26,7 +27,7 @@
   <view class="item">
     <view class="itemLeft">出生<text>*</text></view>
     <view class="itemRight">
-      <picker mode="date"  start="1920-01-01" end="{{timeEnd}}" bindchange="changeTime">
+      <picker value="{{birthValue}}" mode="date"  start="1920-01-01" end="{{timeEnd}}" bindchange="changeTime">
         <view class="pic">
           {{birthValue?birthValue:'未设置'}}
           <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
@@ -38,7 +39,7 @@
   <view class="item">
     <view class="itemLeft">户籍<text>*</text></view>
     <view class="itemRight">
-      <picker range="{{province}}"  bindchange="changeCensus">
+      <picker value="{{selects.census}}" range="{{province}}"  bindchange="changeCensus">
         <view class="pic">
           {{census?census:'未设置'}}
           <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
@@ -62,7 +63,7 @@
   <view class="item">
     <view class="itemLeft">学历<text>*</text></view>
     <view class="itemRight">
-      <picker range="{{education}}" bindchange="changeEduc">
+      <picker value="{{selects.educValue}}" range="{{education}}" bindchange="changeEduc">
         <view class="pic">
           {{educValue?educValue:'未设置'}}
           <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
@@ -74,7 +75,7 @@
   <view class="item">
     <view class="itemLeft">身高<text>*</text></view>
     <view class="itemRight">
-      <picker range="{{stature}}" bindchange="changeStature">
+      <picker value="{{selects.stature}}" range="{{stature}}" bindchange="changeStature">
         <view class="pic ">
           {{statureValue?statureValue:'未设置'}}
           <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
@@ -86,7 +87,7 @@
   <view class="item">
     <view class="itemLeft">职业<text>*</text></view>
     <view class="itemRight">
-      <picker range="{{occupation}}" bindchange="changeOccup">
+      <picker value="{{selects.occupation}}" range="{{occupation}}" bindchange="changeOccup">
         <view class="pic">
         {{occupValue?occupValue:'未设置'}}
           <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
@@ -97,7 +98,7 @@
 
   <view class="item">
     <view class="itemLeft">联系方式<text>*</text></view>
-    <input bindinput="changephone" placeholder-class="inputP" class="phone" maxlength="15"  placeholder="手机/微信"></input>
+    <input value="{{phoneVlue}}" bindinput="changephone" placeholder-class="inputP" class="phone" maxlength="19"  placeholder="手机/微信"></input>
   </view>
 </view>
 <view class="button">
