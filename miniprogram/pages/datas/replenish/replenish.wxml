@@ -1,4 +1,4 @@
-<album bind:returnImg="returnImg" id="album"></album>
+<album bind:returnImg="returnImg" id="album" bind:changeUrl="changeUrl"></album>
 <view class="box">
   <image class="top" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/top.png"></image>
   <view class="empty"></view>
@@ -13,7 +13,7 @@
     <view class="item">
       <view class="itemLeft">年收入<text>*</text></view>
       <view class="itemRight">
-        <picker range="{{income}}" bindchange="changeStature">
+        <picker value="{{selects.income}}" range="{{income}}" bindchange="changeStature">
           <view class="pic ">
             {{incomeValue?incomeValue:'未设置'}}
             <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
@@ -25,7 +25,7 @@
     <view class="item">
       <view class="itemLeft">婚姻状况<text>*</text></view>
       <view class="itemRight">
-        <picker range="{{condition}}" bindchange="changeOccup">
+        <picker value="{{selects.condition}}" range="{{condition}}" bindchange="changeOccup">
           <view class="pic">
           {{conditionValue?conditionValue:'未设置'}}
             <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
@@ -37,7 +37,7 @@
     <view class="item">
       <view class="itemLeft">是否有婚房<text>*</text></view>
       <view class="itemRight">
-        <picker range="{{house}}" bindchange="changeEduc">
+        <picker value="{{selects.house}}" range="{{house}}" bindchange="changeEduc">
           <view class="pic">
             {{houseValue?houseValue:'未设置'}}
             <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
@@ -61,13 +61,13 @@
     <view class="album">
       <view class="albumItem" wx:for="{{urls}}" wx:key="{{index}}">
         <view class="albumItem2">
-          <view wx:if="{{!item}}" class="addBox" catchtap="addE">
+          <view wx:if="{{!item.url}}" class="addBox" catchtap="addE">
             <image class="add" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/replenish/add.png"></image>            
           </view>
 
 
-          <view wx:else class="urlAlbum" catchtap="changeAlbum" data-index="{{index}}">
-            <image mode="aspectFill" src="{{item}}"></image>
+          <view wx:else class="urlAlbum" catchtap="changeAlbum" data-id="{{item.id}}" data-index="{{index}}">
+            <image mode="aspectFill" src="{{item.url}}"></image>
             <view>替 换</view>
           </view>
         </view>

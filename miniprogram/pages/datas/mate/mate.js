@@ -32,6 +32,14 @@ Page({
     educValue:"",//学历
     isNext:true,
     markValue:"",//更多说明
+    selects:{
+      age:0,
+      stature:0,
+      income:0,
+      province:0,
+      house:0,
+      education:0,
+    }
   },
   changeSex(e){//年龄
     let that=this,{value}=e.detail;
@@ -87,10 +95,10 @@ Page({
       educValue:this.data.education[value]
     });
   },
-  changephone(e){//电话/微信号
-    let {value}=e.detail;
-    this._phone=value;
-  },
+  // changephone(e){//电话/微信号
+  //   let {value}=e.detail;
+  //   this._phone=value;
+  // },
   textareaEvent(e){//更多择偶要求
     let {value}=e.detail;
     this.setData({markValue:value})
@@ -102,31 +110,32 @@ Page({
     }).then(res=>{
       let dataDeta=JSON.stringify({...res});
       wx.setStorageSync("dataDeta",dataDeta);//存进缓存
-      this.dispose(res)
+       this.dispose(res)
     })
   },
   dispose(res){//数据处理
-    let that=this,datas=this.data,base=res.base,census=datas.province.indexOf(base.birthplace),educValue=datas.education.indexOf(base.education),stature=datas.stature.indexOf(base.height),occupation=datas.occupation.indexOf(base.occupation);
-    if(census!==-1) that.setData({"selects.census":census});//户籍
-    if(educValue!==-1) that.setData({"selects.educValue":educValue});//学历
+    let that=this,datas=this.data,love_condition=res.love_condition,age=datas.age.indexOf(love_condition.age),stature=datas.stature.indexOf(love_condition.height),income=datas.income.indexOf(love_condition.salary),province=datas.province.indexOf(love_condition.birthplace),house=datas.house.indexOf(love_condition.house),education=datas.education.indexOf(love_condition.education)
+    if(age!==-1) that.setData({"selects.age":age});//年龄
     if(stature!==-1) that.setData({"selects.stature":stature});//身高
-    if(occupation!==-1) that.setData({"selects.occupation":occupation});//职业
+    if(income!==-1) that.setData({"selects.income":income});//收入
+    if(province!==-1) that.setData({"selects.province":province});//户籍地
+    if(house!==-1) that.setData({"selects.house":house});//婚房
+    if(education!==-1) that.setData({"selects.education":education});//学历
     that.setData({
-      name:base.nickname,
-      sexValue:"男",
-      birthValue:"1998-06-02",
-      census:base.birthplace,
-      placeValue:base.residence,
-      educValue:base.education,
-      statureValue:base.height,
-      occupValue:base.occupation,
-      phoneVlue:base.phone
+      ageValue:love_condition.age,
+      birthValue:love_condition.height,
+      incomeValue:love_condition.salary,
+      censusValue:love_condition.birthplace,
+      houseValue:love_condition.house,
+      educValue:love_condition.education,
+      markValue:love_condition.mar,
     });
   },
   /**
    * 生命周期函数--监听页面加载
    */
   nextE(){//下一步/完成
+    this._markValue=APP.eliminate(this.data.markValue,true);//只清楚两边空格
     this.requestE().then(res=>{
       wx.navigateTo({
         url: '/pages/datas/replenish/replenish',
@@ -139,14 +148,14 @@ Page({
   },
   requestE(){
     let values=this.data,datas={
-      person_id:APP.userInfo.id||123,
+      person_id:APP.userInfo.person_id||123,
       age:values.ageValue,
       height:values.birthValue,
       salary:values.incomeValue,
       birthplace:values.censusValue,
       house:values.houseValue,
       education:values.educValue,
-      mark:values.markValue
+      mark:this._markValue
     }
     return APP.request({
       path:"/person/edit/loveCondition",
@@ -158,6 +167,7 @@ Page({
     let{come}=options,that=this,timeEnd=new Date().getFullYear()+"-01-01";
     that.setData({timeEnd});
     if(come) that.setData({isNext:false});
+    this.before();
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

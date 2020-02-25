@@ -24,18 +24,15 @@ Component({
    */
   methods: {
     isShowE(e){
-      let that=this,{clas,index,entrance}=e;
+      let that=this,{clas,index,entrance,entranceCount,id}=e;
       that._entrance=entrance;
       that._index="";
-      if(clas==="a"){
-        if(!that._urls){
-          that._count=6;
-        }else{
-          that._count=6-that._urls.length;
-        }
-      }else{
+      that._id="";
+      that._count=entranceCount;
+      if(clas==="t"){
         that._count=1;
         that._index=index;
+        that._id=id;
       }
       that.setData({isShow:false});
     },
@@ -47,7 +44,7 @@ Component({
       let pmi=null;
       if (temp.size > 100000) {
         APP.loadShow("图片压缩中~",false);
-        pmi=  new Promise((reslove)=>{
+        pmi=  new Promise((reslove,reject)=>{
             wx.getImageInfo({
               src: temp.path,
               success: res => {
@@ -71,21 +68,16 @@ Component({
                           destWidth: 750,
                           destHeight: height,
                           success: res => {
-                            console.log(777)
                             reslove(res.tempFilePath)
                           },
-                          fail:err=>{
-                            APP.toastShow("压缩失败...")
-                          }
+                          fail:reject
                         },this);
                       }, 500);
                     });
                   }, 500);
                 });
               },
-              fail:err=>{
-                APP.toastShow("压缩失败...")
-              }
+              fail:reject
             });
           })
         
@@ -104,61 +96,99 @@ Component({
         sizeType: ['compressed'],
         sourceType: ['album'],
         success: res => {
-          that.closeIsAllAlbum();
-          if(that._entrance){//修改
-            console.log("修改")
-          }else{
-            if(that._index!==""){//替换(第一次进入)
-              that._urls[that._index].path=res.tempFiles[0].path;
-            }else{//添加
-              if(!that._urls){
-                that._urls=res.tempFiles;
-              }else{
-                res.tempFiles.map(t=>{
-                  that._urls.push(t)
-                });
-              };
-            };
-          }
-          
-          that.triggerEvent("returnImg",{urls:that._urls});
-          // if(that.isImg()) return APP.toastShow("请选择图片类型~");
-          // that.reduce();
+          that.judgeImg(res)
         }
       });
     },
-    reduce(elents){
-      let arr1=[],arr2=[],that=this,arr3=[];
-      that._urls.map((t)=>{
-        arr1.push(this.compressImage(t)) 
+    cameraHandler(){
+      wx.chooseImage({
+        count:this._count,
+        sizeType: ['compressed'],
+        sourceType: ['camera'],
+        success: res => {
+          that.judgeImg(res)
+        }
       });
+    },
+    judgeImg(res){
+      let that=this;
+      if(that.isImg(res.tempFiles)) return APP.toastShow("请选泽图片类型！")
+      that.closeIsAllAlbum();
+      if(that._id){//替换-已经有的
+        that._idUrl=res.tempFiles;
+        return that.reduce(()=>{
+          that._id=""
+          that.triggerEvent("changeUrl",{url:that._idUrl,index:that._index});
+        });
+      } 
+      if(that._index!==""){//替换(第一次进入)
+        that._urls[that._index].path=res.tempFiles[0].path;
+      }else{//添加
+        if(!that._urls){
+          that._urls=res.tempFiles;
+        }else{
+          res.tempFiles.map(t=>{
+            that._urls.push(t)
+          });
+        };
+      };
+      that.triggerEvent("returnImg",{urls:that._urls});
+    },
+    reduce(elents){//上传主函数
+      let arr1=[],arr2=[],that=this,arr3=[],arr4=[];
+      if(!that._urls&&!that._id) return elents("没动照片");
+      if(that._id){//替换已经有的
+        that._idUrl.map((t)=>{
+          arr1.push(this.compressImage(t)) 
+        });
+      }else{
+        that._urls.map((t)=>{
+          arr1.push(this.compressImage(t)) 
+        });
+      }
        Promise.all(arr1).then(res=>{//同步压缩
         res.map(t=>{
           arr2.push(gfs.isAlbumGF(t));
-          arr3.push(APP.uploadFile({
-            path:"/person/edit/photo",
-            data:t,
-            ids:{
-              person_id:123
-            }
-          }));
+          arr3.push(t);
         });
         Promise.all(arr2).then(res=>{//同步微信审核
-          console.log(8888)
-           Promise.all(arr3).then(res=>{
+          arr3.map(t=>{
+            if(that._id){//替换之前的
+              arr4.push(that.upRequest(1,t));
+            }else{
+              arr4.push(that.upRequest(0,t));
+            }
+          })
+           Promise.all(arr4).then(res=>{//上传
             elents(res)
             //  console.log(res)
+           }).catch(err=>{
+            that._id=""
+            APP.toastShow("图片上传失败！")
            })
         }).catch(err=>{//审核不通过
-          console.log(err,444)
+          that._id=""
+          APP.toastShow("图片存在违规问题！")
         })
+      }).catch(err=>{
+        that._id=""
+        APP.toastShow("图片压缩失败！")
       });
     },
-    isImg(){//判断是否是图片类型
-      let reg= /\.(png|jpg|jpeg)(\?.*)?$/,isJpg=this._temps.map(t=>{
+    isImg(res){//判断是否是图片类型(true==不合格)
+      let reg= /\.(png|jpg|jpeg)(\?.*)?$/,isJpg=res.map(t=>{
        return reg.test(t.path)
       }).some(t=>!t);
       return isJpg;
+    },
+    upRequest(e,t){//上传主要函数
+      let ids={person_id:123},that=this;
+      if(e) ids={person_id:123,photo_id:that._id}
+      return APP.uploadFile({
+        path:"/person/edit/photo",
+        data:t,
+        ids
+      })
     }
   }
 })

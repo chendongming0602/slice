@@ -10,7 +10,7 @@
   <view class="item">
     <view class="itemLeft">年龄要求<text>*</text></view>
     <view class="itemRight">
-      <picker range="{{age}}" bindchange="changeSex">
+      <picker value="{{selects.age}}" range="{{age}}" bindchange="changeSex">
         <view class="pic">
           {{ageValue?ageValue:'未设置'}}
           <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
@@ -22,7 +22,7 @@
   <view class="item">
     <view class="itemLeft">身高要求<text>*</text></view>
     <view class="itemRight">
-      <picker range="{{stature}}" bindchange="changeTime">
+      <picker value="{{selects.stature}}" range="{{stature}}" bindchange="changeTime">
         <view class="pic">
           {{birthValue?birthValue:'未设置'}}
           <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
@@ -34,7 +34,7 @@
   <view class="item">
     <view class="itemLeft">收入要求(年)<text>*</text></view>
     <view class="itemRight">
-      <picker range="{{income}}" bindchange="changeStature">
+      <picker value="{{selects.income}}" range="{{income}}" bindchange="changeStature">
         <view class="pic ">
           {{incomeValue?incomeValue:'未设置'}}
           <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
@@ -46,7 +46,7 @@
   <view class="item">
     <view class="itemLeft">户籍地要求<text>*</text></view>
     <view class="itemRight">
-      <picker range="{{province}}"  bindchange="changeCensus">
+      <picker value="{{selects.province}}" range="{{province}}"  bindchange="changeCensus">
         <view class="pic">
           {{censusValue?censusValue:'未设置'}}
           <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
@@ -58,7 +58,7 @@
   <view class="item">
     <view class="itemLeft">是否有婚房<text>*</text></view>
     <view class="itemRight">
-      <picker range="{{house}}" bindchange="changeEduc">
+      <picker value="{{selects.house}}" range="{{house}}" bindchange="changeEduc">
         <view class="pic">
           {{houseValue?houseValue:'未设置'}}
           <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>
@@ -72,7 +72,7 @@
   <view class="item">
     <view class="itemLeft">学历要求<text>*</text></view>
     <view class="itemRight">
-      <picker range="{{education}}" bindchange="changeOccup">
+      <picker value="{{selects.education}}" range="{{education}}" bindchange="changeOccup">
         <view class="pic">
         {{educValue?educValue:'未设置'}}
           <image class="goRight" src="https://minis-resources-1252149780.cos.ap-guangzhou.myqcloud.com/slice/datas/basics/right.png"></image>

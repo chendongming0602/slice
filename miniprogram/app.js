@@ -15,9 +15,9 @@ App({
   onLaunch: function () {
     this.getUserPic();
   },
-  eliminate(text){//清除两边空格
+  eliminate(text,is=false){//清除两边空格
     text.toString().trim();
-    if(text.toString().trim().length>0) return text.toString().trim();
+    if(text.toString().trim().length>0||is) return text.toString().trim();
     return false
   },
   getUserPic(){//授权请求
